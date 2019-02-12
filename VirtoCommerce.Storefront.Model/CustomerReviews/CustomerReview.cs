@@ -10,10 +10,8 @@ namespace VirtoCommerce.Storefront.Model.CustomerReviews
         public bool? IsActive { get; set; }
         public string ProductID { get; set; }
 
-        public bool IsVoteEnable { get; set; }
-        public bool IsHelpfullVoteVisible { get; set; }
-        public bool IsUselessVoteVisible { get; set; }
-        
+        public string UserReviewRate { get; set; }
+
         public int HelpfullVotesCount { get; set; }
         public int UselessVotesCount { get; set; }
         public int TotalVotesCount { get; set; }

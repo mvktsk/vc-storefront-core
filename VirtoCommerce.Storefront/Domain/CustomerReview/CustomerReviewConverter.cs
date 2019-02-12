@@ -20,9 +20,7 @@ namespace VirtoCommerce.Storefront.Domain.CustomerReview
                 ModifiedDate = itemDto.ModifiedDate,
                 ProductID = itemDto.ProductId,
 
-                IsVoteEnable = IsVoteEnabled(itemDto.UserReviewRate),
-                IsHelpfullVoteVisible = IsHelpfullVoteVisibled(itemDto.UserReviewRate),
-                IsUselessVoteVisible = IsUselessVoteVisibled(itemDto.UserReviewRate),
+                UserReviewRate = itemDto.UserReviewRate,
 
                 HelpfullVotesCount = (int)itemDto.HelpfullVotesCount,
                 UselessVotesCount = (int)itemDto.UselessVotesCount,
