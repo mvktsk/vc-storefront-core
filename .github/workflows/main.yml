@@ -26,10 +26,10 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     env:
-      SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
-      GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-      NUGET_KEY: ${{ secrets.NUGET_KEY }}
-      BLOB_SAS: ${{ secrets.BLOB_TOKEN }}
+      SONAR_TOKEN: "secrets.SONAR_TOKEN"
+      GITHUB_TOKEN: "${{ secrets.REPO_TOKEN }}"
+      NUGET_KEY: "${{ secrets.NUGET_KEY }}"
+      BLOB_SAS: "${{ secrets.BLOB_TOKEN }}"
       PUBLISH_TO_DOCKER: "false"
       UPDATE_LATEST_TAG: "true"
 
@@ -41,10 +41,6 @@ jobs:
         echo "Set PUBLISH_TO_DOCKER=false" 
         echo "Set UPDATE_LATEST_TAG=false"
       env:
-        SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
-        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-        NUGET_KEY: ${{ secrets.NUGET_KEY }}
-        BLOB_SAS: ${{ secrets.BLOB_TOKEN }}
         PUBLISH_TO_DOCKER: "false"
         UPDATE_LATEST_TAG: "false"
 
