@@ -44,3 +44,8 @@ jobs:
         PUBLISH_TO_DOCKER: "false"
         UPDATE_LATEST_TAG: "false"
 
+    - name: Show variables
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        echo $PUBLISH_TO_DOCKER
+        echo $UPDATE_LATEST_TAG
