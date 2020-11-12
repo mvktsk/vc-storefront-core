@@ -46,5 +46,5 @@ jobs:
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
         BLOB_SAS: ${{ secrets.BLOB_TOKEN }}
         PUBLISH_TO_DOCKER: "false"
-        UPDATE_LATEST_TAG: "true"
+        UPDATE_LATEST_TAG: "false"
 
