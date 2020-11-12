@@ -1,0 +1,43 @@
+# v1.1.1.vc-demo-storefront
+name: Storefront CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '.github/**'
+      - 'docs/**'
+      - 'build/**'
+      - 'README.md'
+      - 'LICENSE'
+    branches: [ master, dev ]
+  pull_request:
+    paths-ignore:
+      - '.github/**'
+      - 'docs/**'
+      - 'build/**'
+      - 'README.md'
+      - 'LICENSE'
+    branches: [ master, dev ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    env:
+      SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+      GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+      NUGET_KEY: ${{ secrets.NUGET_KEY }}
+      BLOB_SAS: ${{ secrets.BLOB_TOKEN }}
+      PUBLISH_TO_DOCKER: "false"
+      UPDATE_LATEST_TAG: "true"
+
+    steps:
+
+    - name: Set variables
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        echo "PUBLISH_TO_DOCKER=false" >> $GITHUB_ENV
+        echo "UPDATE_LATEST_TAG=false" >> $GITHUB_ENV
+
